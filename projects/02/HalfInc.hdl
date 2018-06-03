@@ -1,0 +1,10 @@
+CHIP HalfInc {
+    IN in, isincin;
+    OUT out, isincout;
+	
+    PARTS:
+    Not(in=in, out=notin)
+    Or (a=isincin, b=notin, out=isincout)
+    Xor(a=isincin, b=isincout, out=toinc)
+    Or (a=in, b=toinc, out=out)
+}

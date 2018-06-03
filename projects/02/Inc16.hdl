@@ -13,5 +13,22 @@ CHIP Inc16 {
     OUT out[16];
 
     PARTS:
-   // Put you code here:
+	Not16 (in=0, out=preout)
+	HalfInc (in=in[0], isincin=0, out=preout[0], isincout=isinc0)
+	HalfInc (in=in[1], isincin=isinc0, out=preout[1], isincout=isinc1)
+	HalfInc (in=in[2], isincin=isinc1, out=preout[2], isincout=isinc2)
+	HalfInc (in=in[3], isincin=isinc2, out=preout[3], isincout=isinc3)
+	HalfInc (in=in[4], isincin=isinc3, out=preout[4], isincout=isinc4)
+	HalfInc (in=in[5], isincin=isinc4, out=preout[5], isincout=isinc5)
+	HalfInc (in=in[6], isincin=isinc5, out=preout[6], isincout=isinc6)
+	HalfInc (in=in[7], isincin=isinc6, out=preout[7], isincout=isinc7)
+	HalfInc (in=in[8], isincin=isinc7, out=preout[8], isincout=isinc8)
+	HalfInc (in=in[9], isincin=isinc8, out=preout[9], isincout=isinc9)
+	HalfInc (in=in[10], isincin=isinc9, out=preout[10], isincout=isinc10)
+	HalfInc (in=in[11], isincin=isinc10, out=preout[11], isincout=isinc11)
+	HalfInc (in=in[12], isincin=isinc11, out=preout[12], isincout=isinc12)
+	HalfInc (in=in[13], isincin=isinc12, out=preout[13], isincout=isinc13)
+	HalfInc (in=in[14], isincin=isinc13, out=preout[14], isincout=isinc14)
+	HalfInc (in=in[15], isincin=isinc14, out=preout[15], isincout=isinc15)
+	Mux16(a=0, b=preout, sel=isinc15, out=out)
 }
